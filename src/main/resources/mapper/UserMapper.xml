@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssm.mapper.UserMapper">
+    <select id="seek" resultType="com.ssm.entity.UserInfo">
+      Select user_id,user_name,user_password,user_authority from user_info where user_id=#{userId} and user_name=#{username}
+    </select>
+
+    <select id="findByName" resultType="com.ssm.entity.UserInfo" parameterType="String">
+        Select user_id,user_name,user_password,user_authority from user_info where user_name=#{username}
+    </select>
+
+    <select id="findAllUser" resultType="com.ssm.entity.UserInfo">
+        Select user_id,user_name,user_password,user_authority from user_info
+    </select>
+
+    <insert id="insertUser" >
+        insert into user_info (user_name , user_password , user_authority) values (#{username},#{password},#{authority});
+    </insert>
+
+    <update id="updatePassword">
+        update user_info set user_password=#{newPwd} where user_name=#{username}
+    </update>
+</mapper>

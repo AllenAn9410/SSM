@@ -1,0 +1,4 @@
+logs/*
+jdbc.properties
+.idea/*
+target/*
