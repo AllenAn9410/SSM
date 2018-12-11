@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" %>
-<%@ page import="com.ssm.entity.UserInfo" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +7,7 @@
 </head>
 <body>
 <form method="post" action="/login.do">
-    <p>user:<input type="text" name="user" /></p>
+    <p>user:<input type="text" name="user"/></p>
     <p>password:<input type="password" name="password"/></p>
     <input type="submit" value="login"/>
 </form>

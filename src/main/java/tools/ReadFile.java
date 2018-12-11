@@ -12,15 +12,21 @@ public class ReadFile {
         StringBuffer buffer = new StringBuffer();
         InputStream is;
         int count = 0;
+        int temp =0;
         try {
             is = new FileInputStream(file);
             String line;
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is,"GBK"));
             while ((line = reader.readLine()) != null) {
-//                buffer.append(line);
-//                buffer.append("\n");
-                int len = line.length();
-                count += len;
+                buffer.append(line);
+                buffer.append("\n");
+                count++;
+                temp++;
+                if(count == 5){
+                    System.out.println(buffer.toString());
+                    buffer = new StringBuffer();
+                    count = 0;
+                }
             }
             reader.close();
             is.close();
@@ -30,7 +36,7 @@ public class ReadFile {
             e.printStackTrace();
         }
         //return buffer.toString();
-        return count;
+        return temp;
     }
 
     public static String read(String path) {

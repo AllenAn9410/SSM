@@ -52,18 +52,23 @@ public class ExcelRead {
                     continue;
                 }
                 for (int j = 0; j < tableRowLen; j++) {
+
                     HSSFCell cell = row.getCell(j);
+                    if(cell == null){
+                        cells[j] = "";
+                        continue;
+                    }
                     row.getCell(j).setCellType(Cell.CELL_TYPE_STRING);
                     cells[j] = cell.getStringCellValue();
                 }
                 list.add(i, cells);
             }
-            for (String[] a : list) {
-                for (String b : a) {
-                    System.out.print(b + "  ");
-                }
-                System.out.println();
-            }
+//            for (String[] a : list) {
+//                for (String b : a) {
+//                    System.out.print(b + "  ");
+//                }
+//                System.out.println();
+//            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {

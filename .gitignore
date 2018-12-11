@@ -2,3 +2,5 @@ logs/*
 jdbc.properties
 .idea/*
 target/*
+*.phd
+*.xls
