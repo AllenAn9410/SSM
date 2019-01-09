@@ -14,16 +14,14 @@ import java.io.ByteArrayInputStream;
 import java.io.StringWriter;
 
 public class XMLTools {
-    private String path;
 
     public XMLTools() {
     }
 
-    public XMLTools(String path) {
-        this.path = path;
-    }
+    public XMLTools(String path){}
 
-    public Document covertFileToNode() throws Exception {
+
+    public Document covertFileToNode(String path) throws Exception {
         String file = ReadFile.read(path);
         Document dom = DocumentBuilderFactory.newInstance()
                 .newDocumentBuilder()
