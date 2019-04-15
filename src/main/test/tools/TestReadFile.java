@@ -14,6 +14,9 @@ public class TestReadFile {
     public void test2(){
        int a =  ReadFile.count("./反叛的大魔王.txt");
        System.err.println(a);
+
+       StringBuilder b = new StringBuilder();
+       b.append("1");
     }
 
 

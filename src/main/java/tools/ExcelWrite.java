@@ -70,8 +70,12 @@ public class ExcelWrite {
         this.excelHeaderLength = length;
     }
 
-    private boolean checkParamsLength(String[] values) {
-        return values.length == excelHeaderLength ? true : false;
+    private boolean checkParamsLength(String[] values) throws Exception {
+        try{
+            return values.length == excelHeaderLength ? true : false;
+        } catch (Exception e){
+            throw new Exception("params length error");
+        }
     }
 
     /**
@@ -87,7 +91,7 @@ public class ExcelWrite {
      * }
      */
 
-    public String load(String[] values) {
+    public String load(String[] values) throws Exception {
         if (!checkParamsLength(values)) {
             return "error";
         }

@@ -84,14 +84,18 @@ public class ExcelRead {
 
     }
 
-    private static String[] getTableHead(HSSFSheet sheet) {
-        HSSFRow row0 = sheet.getRow(0);
-        String[] head = new String[row0.getLastCellNum()];
-        for (int i = 0; i < row0.getLastCellNum(); i++) {
-            HSSFCell cell = row0.getCell(i);
-            head[i] = cell.getStringCellValue();
+    private static String[] getTableHead(HSSFSheet sheet) throws Exception {
+        try{
+            HSSFRow row0 = sheet.getRow(0);
+            String[] head = new String[row0.getLastCellNum()];
+            for (int i = 0; i < row0.getLastCellNum(); i++) {
+                HSSFCell cell = row0.getCell(i);
+                head[i] = cell.getStringCellValue();
+            }
+            return head;
+        } catch (Exception e){
+            throw new Exception("get table head error");
         }
-        return head;
     }
 
 

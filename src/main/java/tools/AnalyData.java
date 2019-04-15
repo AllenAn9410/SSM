@@ -7,11 +7,11 @@ import java.util.Map;
 import static tools.ExcelWrite.isEmpty;
 
 public class AnalyData {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         collection();
     }
 
-    public static void collection() {
+    public static void collection() throws Exception {
         String path = "./target/target2.xls";
         int sheetAt = 1;
         List<String[]> list = ExcelRead.readExcel(path, sheetAt);

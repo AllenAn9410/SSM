@@ -2,7 +2,10 @@ package tools;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 public class TestExcelWrite {
     @Test
@@ -42,5 +45,35 @@ public class TestExcelWrite {
         }
         return arr;
     }
+
+    @Test
+    public void testHashMap(){
+        System.out.println(1000%10000);
+        List list = new ArrayList();
+        for(int i=1;i<=54;i++){
+            list.add(i+"");
+        }
+        List tempList = new ArrayList();
+        Random ran = new Random();
+        int rann = ran.nextInt(10000);
+        int temp = 0;
+        while(list.size() != 0){
+            temp = rann % (list.size());
+            String a = (String)list.remove(temp);
+            tempList.add(a);
+        }
+        Object[] arr = tempList.toArray();
+        for(Object b:arr){
+            System.out.println(b.toString());
+        }
+    }
+
+    @Test
+    public void Excel(){
+        List list = ExcelRead.readExcel("./target2.xls",3);
+        System.out.println();
+
+    }
+
 
 }

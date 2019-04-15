@@ -12,7 +12,7 @@ public class ExcelSort {
 
 
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception {
         List<String[]> target1 = ExcelRead.readExcel("./target1.xls");
         List<String[]> target2 = ExcelRead.readExcel("./target2.xls");
 

@@ -4,6 +4,7 @@ import com.ssm.entity.UserInfo;
 import com.ssm.service.UserService;
 import com.ssm.validate.ParamValidate;
 import org.json.JSONObject;
+import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
@@ -30,15 +31,16 @@ public class MvcController {
 
 
     @RequestMapping(path="aa/{bb}",method = RequestMethod.POST)
-    public Map test(@PathVariable("bb") String bb){
+    public Map test(@PathVariable("bb") String bb,@RequestParam("user") String user){
 //        JSONObject jsonObject = new JSONObject();
 //        jsonObject.put("url",bb);
         Map<String ,String> rtn=new HashMap<>();
         rtn.put("url",bb);
+        rtn.put("user",user);
         return  rtn;
     }
 
-    @RequestMapping(path="json",method = RequestMethod.POST)
+    @RequestMapping(path="map",method = RequestMethod.POST)
     public String json(Map str){
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("url",str.toString());

@@ -84,7 +84,7 @@ public class BaiduApi {
         return output;
     }
 
-    private void analyse(String msg, ExcelWrite ew) {
+    private void analyse(String msg, ExcelWrite ew) throws Exception {
         String phone;
         JSONObject oneData;
         JSONObject json;

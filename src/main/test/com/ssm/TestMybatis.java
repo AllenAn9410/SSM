@@ -14,7 +14,7 @@ import java.util.List;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"classpath:conf/spring-mybatis.xml","classpath:conf/spring-service.xml"})
+@ContextConfiguration({"classpath:conf/spring-mybatis.xml","classpath:conf/spring-service.xml"})
 public class TestMybatis {
 
     private static Logger logger = Logger.getLogger(TestMybatis.class);
