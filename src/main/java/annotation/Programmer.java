@@ -1,5 +1,8 @@
 package annotation;
 
 public interface Programmer {
-    void code();
+
+    void code(String in);
+
+    void sleep();
 }

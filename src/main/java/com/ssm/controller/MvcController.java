@@ -4,7 +4,6 @@ import com.ssm.entity.UserInfo;
 import com.ssm.service.UserService;
 import com.ssm.validate.ParamValidate;
 import org.json.JSONObject;
-import org.omg.CORBA.Request;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
